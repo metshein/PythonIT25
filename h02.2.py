@@ -11,7 +11,7 @@ t.speed(0)
 t.pensize(10)
 #vars
 t.penup()
-t.goto(0,-200)
+t.goto(0, -200)
 t.pendown()
 t.pencolor("green")
 t.lt(90)
