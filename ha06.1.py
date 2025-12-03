@@ -14,7 +14,6 @@ pikkus = round(math.sqrt(math.pow(korgus,2) + math.pow(kaugus,2)),2)
 
 print(pikkus)
 print(kaugus)
-print(nurk)
 
 turtle.fd(kaugus * mootkava)
 turtle.lt(90)
