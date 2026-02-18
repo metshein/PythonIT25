@@ -40,6 +40,7 @@ def liigu_paremale():
 
 # ringi funktsioonid
 def peegelda_porkumisel():
+    global skoor
     nurk = ring.heading()
     if ring.xcor() >= 300 or ring.xcor() <= -300:
         uus_nurk = 180 - nurk
@@ -52,22 +53,24 @@ def peegelda_porkumisel():
     if ring.ycor() <= -300:
         print("Game Over")
         # turtle.bye()
+    x = ristkylik.xcor()
+    y = ristkylik.ycor()
+    if (ring.ycor() <= y and ring.ycor()+5 >= y) and (ring.xcor() <= x and ring.xcor()+100 >= x):
+        skoor+=1
+        turtle.write(skoor, font=("Arial", 8, "normal"))
+        print("Skoor:",skoor)
+        uus_nurk = 360 - nurk
+        ring.setheading(uus_nurk)
+
         
 
 
 def ring_liigu():
-    global skoor
     ring.forward(kiirus)
     peegelda_porkumisel()
     aken.update()
     aken.ontimer(ring_liigu, 20)
-    x = ristkylik.xcor()
-    y = ristkylik.ycor()
-    # print(x,":",y)
-    # print(ring.ycor())
-    if (ring.ycor() <= y and ring.ycor()+5 >= y) and (ring.xcor() <= x and ring.xcor()+100 >= x):
-        skoor+=1
-        print("Skoor:",skoor)
+    
 
 # klaviatuurile reageerimine
 aken.listen()
