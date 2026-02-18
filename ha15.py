@@ -57,6 +57,11 @@ def peegelda_porkumisel():
     y = ristkylik.ycor()
     if (ring.ycor() <= y and ring.ycor()+5 >= y) and (ring.xcor() <= x and ring.xcor()+100 >= x):
         skoor+=1
+        turtle.hideturtle()
+        turtle.clear()
+        turtle.penup()
+        turtle.goto(-250,200)
+        turtle.pendown()
         turtle.write(skoor, font=("Arial", 30, "normal"))
         print("Skoor:",skoor)
         uus_nurk = 360 - nurk
