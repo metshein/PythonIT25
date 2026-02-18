@@ -1,8 +1,6 @@
 import turtle
 import random
 
-skoor = 0
-
 aken = turtle.Screen()
 aken.bgcolor("lightblue")
 aken.setup(width=600, height=600)
@@ -49,25 +47,21 @@ def peegelda_porkumisel():
     if ring.ycor() >= 300 or ring.ycor() <= -300:
         uus_nurk = 360 - nurk
         ring.setheading(uus_nurk)
-    if ring.ycor() <= -300:
-        print("Game Over")
-        # turtle.bye()
-        
+    
 
+    # tee kaheks, kui maad puudub, siis exit
+    if ring.ycor()>=290:
+        # print(ring.ycor())
+        ...
+
+    #kui puudub ristkülikut, siis põrkab tagasi ja saab punkti
+    
 
 def ring_liigu():
-    global skoor
     ring.forward(kiirus)
     peegelda_porkumisel()
     aken.update()
     aken.ontimer(ring_liigu, 20)
-    x = ristkylik.xcor()
-    y = ristkylik.ycor()
-    # print(x,":",y)
-    # print(ring.ycor())
-    if (ring.ycor() <= y and ring.ycor()+5 >= y) and (ring.xcor() <= x and ring.xcor()+100 >= x):
-        skoor+=1
-        print("Skoor:",skoor)
 
 # klaviatuurile reageerimine
 aken.listen()
