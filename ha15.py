@@ -55,9 +55,10 @@ def peegelda_porkumisel():
         # turtle.bye()
     x = ristkylik.xcor()
     y = ristkylik.ycor()
-    # if (y + 10 >= ring.ycor() and ring.ycor() >= y - 10) and (x + 50 >= ring.xcor() and ring.xcor() >= x - 50)
-    if (ring.ycor() <= y and ring.ycor()+5 >= y) and (ring.xcor() <= x and ring.xcor()+100 >= x):
+    if (y + 10 >= ring.ycor() and ring.ycor() >= y - 10) and (x + 50 >= ring.xcor() and ring.xcor() >= x - 50):
+    # if (ring.ycor() <= y and ring.ycor()+5 >= y) and (ring.xcor() <= x and ring.xcor()+100 >= x):
         skoor+=1
+        #skoori kuvamine
         turtle.hideturtle()
         turtle.clear()
         turtle.penup()
