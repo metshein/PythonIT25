@@ -1,18 +1,37 @@
+import os
+from datetime import date
 # Kirjutage Pythoni skript, mis tervitab kasutajat, kuvab praeguse töökataloogi, loob uusi katalooge vastavalt kasutaja soovile ning küsib, millist kataloogi soovitakse kustutada.
 #     Skript tervitab kasutajat tema operatsioonisüsteemi sisselogimisnime alusel
-print(f"Hello {os.user}")
-
-
-
+print(f"Hello {os.getlogin()}")
 
 #     Skript kuvab kasutajale praeguse töökataloogi tee
-#     Kataloogide loomine:
+print(f"Sinu kataloogitee: {os.getcwd()}")
 
+#     Kataloogide loomine:
 #         Skript küsib kasutajalt, mitu kataloogi ta soovib luua
+
+
+today = date.today()
+try:
+    os.mkdir(str(today))
+except:
+    print("ära jama, juba olemas")
 #         Kataloogid luuakse praegusesse töökataloogi kuupäevaga märgistatud kataloogi sees, nummerdatuna (nt “1”, “2”)
-#     Kataloogi kustutamine:
-#         Pärast kataloogide loomist küsib skript kasutajalt, millist äsja loodud või olemasolevat kataloogi soovitakse kustutada, esitades kataloogi nime 1, 2 jne
-#         Kui sisestatud kataloogi nimi eksisteerib, kustutatakse see
+mitu = int(input("Mitu kataloogi tahad teha: "))
+for i in range(mitu):
+    os.mkdir(str(today)+"/"+str(i+1))
+    print(f"Kataloogid 1-{mitu} tehtud")
+
+kustuta = input(f"Kustuta valikust 1-{mitu}:")
+path = os.getcwd()+'\\'+str(today)+'\\'+kustuta
+# print(path)
+if os.path.isdir(path):
+    os.rmdir(path)
+
+
+# Kataloogi kustutamine:
+# Pärast kataloogide loomist küsib skript kasutajalt, millist äsja loodud või olemasolevat kataloogi soovitakse kustutada, esitades kataloogi nime 1, 2 jne
+#  Kui sisestatud kataloogi nimi eksisteerib, kustutatakse see
 #     Kuva kuupäeva kasutas olevad kataloogid
 
 
