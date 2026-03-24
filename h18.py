@@ -13,6 +13,7 @@ with open(faili_nimi, mode='r', encoding='utf-8') as fail:
     # print(f"Päise veerud: {pais}")
     for rida in csv_lugeja:
         # print(rida[1], rida[2])
+        
         if rida[1] not in meeskonnad:
             meeskonnad.append(rida[1])
             mk_mangud[rida[1]] = 1

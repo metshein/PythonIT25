@@ -7,7 +7,7 @@ import csv
 
 faili_nimi = 'EstonianBasketballGames.csv'
 
-meeskonnad = {}
+meeskonnad = {} 
 
 with open(faili_nimi, mode='r', encoding='utf-8') as fail:
     csv_lugeja = csv.reader(fail)
@@ -17,6 +17,9 @@ with open(faili_nimi, mode='r', encoding='utf-8') as fail:
 
     # print(f"Päise veerud: {pais}")
     for rida in csv_lugeja:
+        rentide_arv+=1
+
+
         meeskonnad[rida[1]] = 0
         
         # if rida[1] not in meeskonnad:

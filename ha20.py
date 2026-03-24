@@ -19,4 +19,4 @@ if response.status_code == 200:
     print(f"Ilma kirjeldus: {weather}")
     print(f"Temperatuur: {temperature} °C")
 else:
-    print("Viga andmete allalaadimisel:", response.status_code)
+    print("Viga andmete allalaadimisel:", response.status_code) 
